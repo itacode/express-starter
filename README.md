@@ -1,2 +1,2 @@
 # express-starter
-Base scaffolding to start an expressjs project
+Basic scaffold to start an expressjs project
