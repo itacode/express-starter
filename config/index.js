@@ -1,22 +1,22 @@
 const production = require('../.env/.env-production').envProduction;
-const development = require('../.env/.env-development').envDevelopment;
+const development = require('../.env/.env-development').env;
 
 // console.log(production, development);
 
-function init() {
+function init(app) {
   const nodeEnv = process.env.NODE_ENV;
 
   // Case: production
   if (!nodeEnv || nodeEnv === 'production') {
     configProduction(process.env, production);
-    return;
   }
 
   // Case: development
   if (nodeEnv === 'development') {
     configDevelopment(process.env, development);
-    return;
   }
+
+  app.set('env', process.env.NODE_ENV);
 }
 
 function configProduction(processEnv, production) {
