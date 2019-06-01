@@ -1,9 +1,7 @@
 const production = require('../.env/.env-production').envProduction;
 const development = require('../.env/.env-development').env;
 
-// console.log(production, development);
-
-function init(app) {
+function init() {
   const nodeEnv = process.env.NODE_ENV;
 
   // Case: production
@@ -15,8 +13,6 @@ function init(app) {
   if (nodeEnv === 'development') {
     configDevelopment(process.env, development);
   }
-
-  app.set('env', process.env.NODE_ENV);
 }
 
 function configProduction(processEnv, production) {
