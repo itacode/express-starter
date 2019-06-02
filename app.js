@@ -1,24 +1,24 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var helmet = require('helmet');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
 
 /**
  * Configure environment variables defined in files inside .env.
- * Any modules needing env variables must be after config().
+ * Any modules needing env variables must required after config().
  */
-var config = require('./config/index');
+const config = require('./config/index');
 config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var apiRouter = require('./api');
+const apiRouter = require('./api');
 
-var morgan = require('morgan');
-var logger = require('./config/winston').logger;
-var app = express();
+const morgan = require('morgan');
+const logger = require('./config/winston').logger;
+const app = express();
 
 /**
  * Some security best practices.
