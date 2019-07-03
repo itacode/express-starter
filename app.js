@@ -6,7 +6,7 @@ const helmet = require('helmet');
 
 /**
  * Configure environment variables defined in files inside .env.
- * Any modules needing env variables must required after config().
+ * Any modules needing env variables must be required after config().
  */
 const config = require('./config/index');
 config();
@@ -21,9 +21,8 @@ const logger = require('./config/winston').logger;
 const app = express();
 
 /**
- * Some security best practices.
+ * Security best practices.
  */
-app.set('x-powered-by', false);
 app.use(helmet());
 
 /**
@@ -57,7 +56,7 @@ app.use(function (req, res, next) {
 /**
  * Error handler.
  */
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
