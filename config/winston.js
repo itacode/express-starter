@@ -8,7 +8,7 @@ const consoleTransport = new winston.transports.Console({
 
 const dailyRotateFile = new winston.transports.DailyRotateFile({
   filename: './log/combined-%DATE%.log',
-  datePattern: 'YYYY-MM-DD-HH',
+  datePattern: 'YYYY-MM-DD',
   zippedArchive: true,
   maxSize: '20m',
   maxFiles: '14d',
