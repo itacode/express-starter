@@ -1,8 +1,9 @@
-const createError = require('http-errors');
-const express = require('express');
 const path = require('path');
+const express = require('express');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
+const createError = require('http-errors');
+const layouts = require('express-ejs-layouts')
 
 /**
  * Configure environment variables defined in files inside .env.
@@ -30,6 +31,7 @@ app.use(helmet());
  */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(layouts);
 
 app.use(morgan('combined', {
   stream: logger.stream,
