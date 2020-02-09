@@ -17,10 +17,10 @@
     "http-errors": "^1.7.3",
     "morgan": "^1.9.1",
     "winston": "^3.2.1",
-    "winston-daily-rotate-file": "^4.4.1"
+    "winston-daily-rotate-file": "^4.4.2"
   },
   "devDependencies": {
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.0",
     "eslint": "^6.8.0",
     "nodemon": "^2.0.2"
   }
