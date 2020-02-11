@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -7,9 +9,9 @@ const layouts = require('express-ejs-layouts')
 
 /**
  * Configure environment variables defined in files inside .env.
- * Any modules needing env variables must be required after config().
+ * Any module needing env variables must be required after config().
  */
-const config = require('./config/index');
+const config = require('./config/index').config;
 config();
 
 const indexRouter = require('./routes/index');
@@ -19,6 +21,7 @@ const apiRouter = require('./api');
 
 const morgan = require('morgan');
 const logger = require('./config/winston').logger;
+
 const app = express();
 
 /**
