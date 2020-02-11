@@ -19,4 +19,4 @@ It is possible to add configuration by simply defining new properties on the con
 
 **Important:** remember to **uncomment out** `# .env/` line (→ `.env/`) in `.gitignore` file before the first commit, otherwise the secrets in the environment variables will be published in the repository.
 
-To start developing with automatic restarting of the expressjs server, execute `npm start`.
+To start developing with automatic restarting of the server, execute `npm dev`.
