@@ -5,7 +5,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const createError = require('http-errors');
-const layouts = require('express-ejs-layouts')
+const layouts = require('express-ejs-layouts');
 
 /**
  * Configure environment variables defined in files inside .env.
