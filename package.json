@@ -23,6 +23,6 @@
   "devDependencies": {
     "cross-env": "^7.0.2",
     "eslint": "^7.0.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.4"
   }
 }
