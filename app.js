@@ -14,10 +14,8 @@ const layouts = require('express-ejs-layouts');
 const config = require('./config/index').config;
 config();
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
-const apiRouter = require('./api');
+const indexRouter = require('./routes').router;
+const apiRouter = require('./api').router;
 
 const morgan = require('morgan');
 const logger = require('./config/winston').logger;
@@ -47,8 +45,14 @@ app.use(express.urlencoded({
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * Pages routes.
+ */
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+/**
+ * API routes.
+ */
 app.use('/api', apiRouter);
 
 /**

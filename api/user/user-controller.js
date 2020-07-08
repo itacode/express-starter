@@ -1,7 +1,7 @@
-function index(req, res) {
+function indexGet(req, res) {
   return res.status(200).json({
-    message: 'user getIndex'
+    message: 'user indexGet',
   });
 }
 
-module.exports.index = index;
+module.exports = { indexGet };

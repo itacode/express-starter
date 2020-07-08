@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const registerRootRoutes = require('./root/root-routes').registerRoutes;
+const registerUsersRoutes = require('./users/users-routes').registerRoutes;
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
-});
+registerAllRoutes(router);
 
-module.exports = router;
+function registerAllRoutes(router) {
+  registerRootRoutes(router);
+  registerUsersRoutes(router);
+}
+
+module.exports = { router };

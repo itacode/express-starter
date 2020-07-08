@@ -1,12 +1,11 @@
 const express = require('express');
-const registerUserRoutes = require('./user/user-routes');
 const router = express.Router();
+const registerUserRoutes = require('./user/user-routes').registerRoutes;
 
-const routes = getRoutes(router);
+registerAllRoutes(router);
 
-function getRoutes(router) {
+function registerAllRoutes(router) {
   registerUserRoutes(router);
-  return router;
 }
 
-module.exports = routes;
+module.exports = { router };

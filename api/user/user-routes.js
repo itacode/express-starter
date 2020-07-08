@@ -1,7 +1,7 @@
 const controller = require('./user-controller');
 
 function registerRoutes(router) {
-  router.get('/user', controller.index);
+  router.get('/user', controller.indexGet);
 }
 
-module.exports = registerRoutes;
+module.exports = { registerRoutes };
