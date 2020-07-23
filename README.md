@@ -6,10 +6,12 @@ Basic scaffold to start an expressjs project
 - EJS template
 - API router
 - Environment variables configuration
+- Winston logger
+- Output logs to a file, with daily rotation
 - Crossenv
 - Nodemon
 - ESLint
-- Output logs to a file, with daily rotation
+- Jest testing framework
 
 The basic environment configuration is applied by the module `config`, through merging variables defined in the files inside `.env` directory with node environment ones.
 - If `NODE_ENV` is undefined or equal to `"production"` then `.env-production.js` is used in merging and `NODE_ENV` is set to `"production"`

@@ -6,7 +6,8 @@
     "lint": "eslint .",
     "start": "node ./bin/www",
     "dev": "cross-env NODE_ENV=development nodemon ./bin/www",
-    "dev:debug": "cross-env NODE_ENV=development DEBUG=* nodemon ./bin/www"
+    "dev:debug": "cross-env NODE_ENV=development DEBUG=* nodemon ./bin/www",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "cross-env": "^7.0.2",
     "eslint": "^7.5.0",
+    "jest": "^26.1.0",
     "nodemon": "^2.0.4"
   }
 }
