@@ -6,8 +6,8 @@ Basic scaffold to start an expressjs project
 - EJS template
 - API router
 - Environment variables configuration
-- Winston logger
-- Output logs to a file, with daily rotation
+- Pino HTTP logger
+- Pino logger
 - Crossenv
 - Nodemon
 - ESLint

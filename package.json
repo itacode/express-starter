@@ -18,9 +18,8 @@
     "express-ejs-layouts": "^2.5.0",
     "helmet": "^3.23.3",
     "http-errors": "^1.8.0",
-    "morgan": "^1.10.0",
-    "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.0"
+    "pino": "^6.4.1",
+    "pino-http": "^5.2.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",

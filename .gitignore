@@ -1,6 +1,5 @@
 package-lock.json
 dist/
-log/
 
 # dotenv environment variables files directory
 # .env/
