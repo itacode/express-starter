@@ -10,6 +10,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
@@ -25,6 +26,7 @@
     "cross-env": "^7.0.2",
     "eslint": "^7.5.0",
     "jest": "^26.1.0",
+    "nock": "^13.0.2",
     "nodemon": "^2.0.4"
   }
 }

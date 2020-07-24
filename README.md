@@ -5,6 +5,7 @@ Basic scaffold to start an expressjs project
 - Expressjs
 - EJS template
 - API router
+- Circuit Breaker
 - Environment variables configuration
 - Pino HTTP logger
 - Pino logger
