@@ -4,8 +4,8 @@ module.exports = {
     es6: true,
     browser: true,
     node: true,
-    mocha: true,
     jquery: true,
+    jest: true,
   },
   'extends': [
     'eslint:recommended',
