@@ -7,13 +7,6 @@ const helmet = require('helmet');
 const createError = require('http-errors');
 const layouts = require('express-ejs-layouts');
 
-/**
- * Configure environment variables defined in files inside .env.
- * Any module needing env variables must be required after config().
- */
-const config = require('./config/index').config;
-config();
-
 const indexRouter = require('./routes').router;
 const apiRouter = require('./api').router;
 
