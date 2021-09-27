@@ -7,8 +7,8 @@ const helmet = require('helmet');
 const createError = require('http-errors');
 const layouts = require('express-ejs-layouts');
 
-const indexRouter = require('./routes').router;
-const apiRouter = require('./api').router;
+const indexRouter = require('../routes').router;
+const apiRouter = require('../api').router;
 
 const pino = require('pino-http')();
 
@@ -22,7 +22,7 @@ app.use(helmet());
 /**
  * View engine setup.
  */
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.use(layouts);
 
@@ -36,7 +36,7 @@ app.use(express.urlencoded({
   extended: false,
 }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../../public')));
 
 /**
  * Pages routes.

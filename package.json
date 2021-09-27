@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
-    "start": "node ./bin/www",
-    "dev": "cross-env PLATFORM=development nodemon ./bin/www | pino-pretty",
-    "dev:debug": "cross-env PLATFORM=development DEBUG=* nodemon ./bin/www | pino-pretty",
+    "start": "node ./server/index.js",
+    "dev": "cross-env PLATFORM=development nodemon ./server/index.js | pino-pretty",
+    "dev:debug": "cross-env PLATFORM=development DEBUG=* nodemon --inspect-brk ./server/index.js | pino-pretty",
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
