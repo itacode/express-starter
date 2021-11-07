@@ -10,7 +10,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "axios": "^0.23.0",
+    "axios": "^0.24.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -22,7 +22,7 @@
     "helmet": "^4.6.0",
     "http-errors": "^1.8.0",
     "pino": "^7.0.3",
-    "pino-http": "^5.8.0"
+    "pino-http": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
