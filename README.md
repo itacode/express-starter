@@ -1,5 +1,5 @@
 # express-starter
-Basic scaffold to start an expressjs project
+Basic scaffold to start a TypeScript Express.js project
 
 ## Platforms and Environment Variables
 ### Platforms
@@ -21,9 +21,9 @@ This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-
 
 ## Features
 - Expressjs
+- TypeScript
 - EJS template
 - API router
-- Circuit Breaker
 - Environment variables configuration
 - Pino HTTP logger
 - Pino logger

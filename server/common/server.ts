@@ -1,16 +1,20 @@
 'use strict';
 
-const path = require('path');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const helmet = require('helmet');
-const createError = require('http-errors');
-const layouts = require('express-ejs-layouts');
+import path from 'path';
+import express, { Request, Response } from 'express';
+import cookieParser from 'cookie-parser';
+import helmet from 'helmet';
+import createError from 'http-errors';
+import layouts from 'express-ejs-layouts';
+import pinoHttp from 'pino-http';
+import { router as apiRouter } from '../api';
+import { router as indexRouter } from '../routes';
 
-const indexRouter = require('../routes').router;
-const apiRouter = require('../api').router;
+interface ResponseError extends Error {
+  status?: number;
+}
 
-const pino = require('pino-http')();
+const pino = pinoHttp();
 
 const app = express();
 
@@ -32,9 +36,11 @@ app.use(layouts);
 app.use(pino);
 
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: false,
-}));
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, '../../public')));
 
@@ -51,24 +57,27 @@ app.use('/api', apiRouter);
 /**
  * Catch 404 and forward to error handler.
  */
-app.use(function (req, res, next) {
+app.use(function (_req, _res, next) {
   next(createError(404));
 });
 
 /**
  * Error handler.
  */
-/* eslint-disable-next-line no-unused-vars */
-app.use(function (err, req, res, next) {
+app.use(function (err: ResponseError, req: Request, res: Response) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  req.log.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+  req.log.error(
+    `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${
+      req.method
+    } - ${req.ip}`
+  );
 
   // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
 
-module.exports = app;
+export { app };

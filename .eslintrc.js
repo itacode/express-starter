@@ -1,5 +1,12 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   env: {
     es6: true,
     browser: true,
@@ -7,9 +14,6 @@ module.exports = {
     jquery: true,
     jest: true,
   },
-  'extends': [
-    'eslint:recommended',
-  ],
   parserOptions: {
     'ecmaVersion': 8,
   },
