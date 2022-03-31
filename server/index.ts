@@ -1,15 +1,17 @@
 #!/usr/bin/env node
+'use strict';
 
 import http from 'http';
-import { app } from './common/server';
+import { newApp } from './app';
 import { loadEnv } from './common/env';
 import { logger } from './common/logger';
 
 loadEnv();
 
 const port = normalizePort(process.env.APP_PORT || '3000');
-app.set('port', port);
 
+const app = newApp();
+app.set('port', port);
 const server = http.createServer(app);
 
 server.listen(port);
