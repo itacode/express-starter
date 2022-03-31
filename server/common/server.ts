@@ -1,7 +1,7 @@
 'use strict';
 
 import path from 'path';
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import createError from 'http-errors';
@@ -18,21 +18,15 @@ const pino = pinoHttp();
 
 const app = express();
 
-/**
- * Security best practices.
- */
+// Security best practices
 app.use(helmet());
 
-/**
- * View engine setup.
- */
+// View engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.use(layouts);
 
-/**
- * HTTP logger.
- */
+// HTTP logger
 app.use(pino);
 
 app.use(express.json());
@@ -44,27 +38,24 @@ app.use(
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, '../../public')));
 
-/**
- * Pages routes.
- */
+// HTML pages routes
 app.use('/', indexRouter);
 
-/**
- * API routes.
- */
+// API routes
 app.use('/api', apiRouter);
 
-/**
- * Catch 404 and forward to error handler.
- */
+// Catch 404 and forward to error handler
 app.use(function (_req, _res, next) {
   next(createError(404));
 });
 
-/**
- * Error handler.
- */
-app.use(function (err: ResponseError, req: Request, res: Response) {
+// Error handler
+app.use(function (
+  err: ResponseError,
+  req: Request,
+  res: Response,
+  _next: NextFunction
+) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -77,7 +68,7 @@ app.use(function (err: ResponseError, req: Request, res: Response) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('sdads');
 });
 
 export { app };
