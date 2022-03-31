@@ -24,7 +24,7 @@ function newApp() {
   app.use(helmet());
 
   // View engine setup
-  app.set('views', path.join(__dirname, '../views'));
+  app.set('views', path.join(__dirname, './views'));
   app.set('view engine', 'ejs');
   app.use(layouts);
 
@@ -38,7 +38,7 @@ function newApp() {
     })
   );
   app.use(cookieParser(process.env.COOKIE_SECRET));
-  app.use(express.static(path.join(__dirname, '../../public')));
+  app.use(express.static(path.join(__dirname, '../public')));
 
   // HTML pages routes
   app.use('/', indexRouter);
