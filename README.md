@@ -1,8 +1,8 @@
 # express-starter
 Basic scaffold to start a TypeScript Express.js project
 
-## Platforms and Environment Variables
-### Platforms
+## Platform and Environment Variables
+### Platform
 **Platform** is a way to specify an environment file to be loaded by `dotenv`.  
 For example if you want `.env.production` to be loaded, you need to set `PLATFORM=production` env variable before starting the app. If you don't set `PLATFORM`, it defaults to `production`.
 
