@@ -20,7 +20,7 @@ An env file for a specific platform (e.g. .env.production) will take higher prio
 This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use) has been adopted.
 
 ## Features
-- Expressjs
+- Express.js
 - TypeScript
 - EJS template
 - API router
