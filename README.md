@@ -14,7 +14,7 @@ You can specify env variables by placing the following files in your project roo
 ```shell
 .env.[platform].local # only loaded in specified platform, ignored by git
 .env.[platform]       # only loaded in specified platform
-.env.local            # loaded in all cases, ignored by git
+.env.local            # loaded in all cases but not test, ignored by git
 .env                  # loaded in all cases
 ```
 
@@ -45,7 +45,7 @@ This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-
 npm install
 ```
 
-## Development server
+## Development
 
 Start the development server with automatic reload.
 
@@ -53,10 +53,10 @@ Start the development server with automatic reload.
 npm run dev
 ```
 
-## Production server
+## Production
 
 ```shell
-npm run compile
+npm run build
 npm start
 ```
 

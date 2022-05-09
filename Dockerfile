@@ -5,7 +5,7 @@ COPY . .
 
 RUN npm install -g npm
 RUN npm ci
-RUN npm run compile
+RUN npm run build
 
 EXPOSE 3000
 
