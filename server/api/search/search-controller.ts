@@ -1,4 +1,4 @@
-import axios, {AxiosRequestConfig} from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { Request, Response } from 'express';
 
 async function indexGet(req: Request, res: Response) {

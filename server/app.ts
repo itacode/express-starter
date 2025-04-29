@@ -1,11 +1,11 @@
 'use strict';
 
-import path from 'path';
-import express, { NextFunction, Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
+import express, { NextFunction, Request, Response } from 'express';
+import layouts from 'express-ejs-layouts';
 import helmet from 'helmet';
 import createError from 'http-errors';
-import layouts from 'express-ejs-layouts';
+import path from 'path';
 import pinoHttp from 'pino-http';
 import { router as apiRouter } from './api';
 import { router as indexRouter } from './routes';
