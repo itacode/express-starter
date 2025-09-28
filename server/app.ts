@@ -4,7 +4,6 @@ import cookieParser from 'cookie-parser';
 import express, { NextFunction, Request, Response } from 'express';
 import layouts from 'express-ejs-layouts';
 import helmet from 'helmet';
-import createError from 'http-errors';
 import path from 'path';
 import pinoHttp from 'pino-http';
 import { router as apiRouter } from './api';
@@ -48,7 +47,9 @@ function newApp() {
 
   // Catch 404 and forward to error handler
   app.use(function (_req, _res, next) {
-    next(createError(404));
+    const err: ResponseError = new Error('Not Found');
+    err.status = 404;
+    next(err);
   });
 
   // Error handler
@@ -70,6 +71,7 @@ function newApp() {
 
     // render the error page
     res.status(err.status || 500);
+    res.render('error');
   });
 
   return app;
