@@ -6,8 +6,14 @@ Basic scaffold to start a TypeScript Express.js microservice.
 
 ### Platform
 
-**Platform** is a way to specify an environment file to be loaded by `dotenv`.  
-For example if you want `.env.production` to be loaded, you need to set `PLATFORM=production` env variable before starting the app. If you don't set `PLATFORM`, it defaults to `production`.
+**Platform** is a way to specify an environment file to be loaded by `dotenv`.
+The application determines the configuration profile by checking variables in this order:
+
+1. `PLATFORM`
+2. `NODE_ENV`
+3. Default: `production`
+
+For example, if you run `npm run dev` (which sets `NODE_ENV=development`), `.env.development` will be loaded automatically. You can override this by setting `PLATFORM` explicitly (e.g., `PLATFORM=staging`).
 
 ### Environment Variables
 
