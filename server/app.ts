@@ -34,7 +34,7 @@ function newApp() {
   app.use(
     express.urlencoded({
       extended: false,
-    })
+    }),
   );
   app.use(cookieParser(process.env.COOKIE_SECRET));
   app.use(express.static(path.join(__dirname, '../public')));
@@ -57,7 +57,7 @@ function newApp() {
     err: ResponseError,
     req: Request,
     res: Response,
-    _next: NextFunction
+    _next: NextFunction,
   ) {
     // set locals, only providing error in development
     res.locals.message = err.message;
@@ -66,7 +66,7 @@ function newApp() {
     req.log.error(
       `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
 
     // render the error page
