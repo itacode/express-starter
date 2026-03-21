@@ -1,7 +1,7 @@
 'use strict';
 
 import cookieParser from 'cookie-parser';
-import express, { NextFunction, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import layouts from 'express-ejs-layouts';
 import helmet from 'helmet';
 import path from 'path';
@@ -53,12 +53,7 @@ function newApp() {
   });
 
   // Error handler
-  app.use(function (
-    err: ResponseError,
-    req: Request,
-    res: Response,
-    _next: NextFunction,
-  ) {
+  app.use(function (err: ResponseError, req: Request, res: Response) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
