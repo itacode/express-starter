@@ -14,7 +14,7 @@ export interface ResponseError extends Error {
 }
 
 /** Application factory */
-function newApp() {
+function newApp(): express.Application {
   const pino = pinoHttp();
 
   const app = express();
