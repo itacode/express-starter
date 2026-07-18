@@ -6,6 +6,7 @@ import layouts from 'express-ejs-layouts';
 import helmet from 'helmet';
 import path from 'path';
 import pinoHttp from 'pino-http';
+
 import { router as apiRouter } from './api';
 import { router as indexRouter } from './routes';
 

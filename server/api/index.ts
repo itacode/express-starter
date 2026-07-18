@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+
 import { registerRoutes as registerSearchRoutes } from './search/search-routes';
 
 const router: Router = express.Router();

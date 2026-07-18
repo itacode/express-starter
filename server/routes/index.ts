@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import { registerRoutes as registerRootRoutes } from './root/root-routes';
 import { registerRoutes as registerUsersRoutes } from './users/users-routes';
 
